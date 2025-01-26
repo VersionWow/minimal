@@ -1,0 +1,52 @@
+@use "var";
+
+.marquee {
+  --border-clr: #{var.$clr-bw-300};
+
+  user-select: none;
+  transform: translateY(calc(-100% - 1rem));
+  overflow: hidden;
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 1rem;
+  border-top: 2px solid var(--canvas-text, var(--border-clr));
+  border-bottom: 3px solid var(--canvas-text, var(--border-clr));
+  animation-play-state: paused;
+}
+
+.marquee-content {
+  display: flex;
+  flex-shrink: 0;
+  gap: 2rem;
+  justify-content: space-around;
+  min-width: 100%;
+  font-family: var.$ff-heading;
+  font-size: 2rem;
+  text-transform: uppercase;
+  animation: marquee 30s linear infinite both;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-100% - 1rem));
+  }
+}
+
+.intoview {
+  animation: intoview 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes intoview {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: none;
+  }
+}

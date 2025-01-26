@@ -1,0 +1,13 @@
+@use "../var";
+
+.blogs__heading {
+  margin-bottom: 1rem;
+}
+
+.button.secondary {
+  --button-bg: #{var.$clr-yellowgreen-300};
+  --button-clr: #{var.$clr-bw-800};
+
+  font-size: 0.88rem;
+  border-color: var(--button-bg);
+}

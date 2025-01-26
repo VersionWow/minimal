@@ -1,0 +1,74 @@
+@use "var";
+
+*,
+*::before,
+*::after {
+  user-select: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  -webkit-user-drag: none;
+}
+
+:root {
+  --canvas: #{var.$clr-bw-900};
+  --canvas-text: #{var.$clr-bw-300};
+
+  color-scheme: light dark;
+}
+
+html {
+  scrollbar-width: thin;
+}
+
+h1 {
+  font-family: var.$ff-heading;
+  line-height: 3;
+  text-transform: uppercase;
+}
+
+img {
+  object-fit: cover;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: var.$ff;
+
+  color: var(--canvas-text);
+  background-color: var(--canvas);
+  transition: 0.8s;
+
+  &[data-state="false"] {
+    --canvas: #{var.$clr-lavender};
+    --canvas-text: #{var.$clr-bw-900};
+    --section-h1: var(--canvas);
+    --button-clr: black;
+  }
+
+  &[data-state="true"] {
+    --canvas: #{var.$clr-blue-200};
+    --canvas-text: #{var.$clr-bw-900};
+    --section-h1: var(--canvas);
+    --button-clr: black;
+  }
+}
+
+main {
+  transform-origin: center;
+  animation: fade 3s 0.6s cubic-bezier(0.3, 0.9, 0.042, 1) both;
+}
+
+@keyframes fade {
+  0% {
+    transform-origin: top center;
+    transform: scale(0.2) rotate(-360deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,98 @@
+@use "var";
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --canvas: #{var.$clr-bw-300};
+    --canvas-text: #{var.$clr-bw-900};
+  }
+
+  .button {
+    --button-bg: #{var.$clr-bw-900};
+    --button-clr: #{var.$clr-bw-300};
+  }
+
+  .button[data-state="error"] {
+    --button-clr: black;
+  }
+
+  .button[data-state="success"] {
+    --button-clr: black;
+  }
+
+  .button[data-state="subscribing"] {
+    --button-clr: black;
+  }
+}
+
+@media (width <= 650px) {
+  .tagline {
+    display: none;
+  }
+
+  .card {
+    & > h1 {
+      padding-top: 4rem;
+      font-size: 0.8rem;
+    }
+
+    &:nth-child(n + 1) {
+      grid-column: span 6;
+    }
+  }
+}
+
+@media (width >= 650px) and (width < 900px) {
+  .tagline {
+    display: none;
+  }
+
+  .cards {
+    gap: 4rem;
+  }
+
+  .card {
+    & > h1 {
+      padding-top: 4rem;
+      font-size: 0.8rem;
+    }
+
+    &:nth-child(n + 1) {
+      grid-column: 1 / -1;
+      margin-right: 4rem;
+      margin-bottom: 4rem;
+      margin-left: 4rem;
+    }
+  }
+}
+
+@media (width >= 900px) and (width < 1200px) {
+  .tagline {
+    font-size: 0.5rem;
+  }
+
+  .card {
+    margin-right: 3rem;
+    margin-bottom: 3rem;
+    margin-left: 2rem;
+
+    &:nth-child(n + 1) {
+      grid-column: span 3;
+    }
+
+    &:nth-child(3) {
+      grid-column: 2 / -2;
+    }
+  }
+}
+
+@media (width >= 1000px) and (width < 1200px) {
+  .tagline {
+    font-size: 0.7rem;
+  }
+}
+
+@media (width >= 1200px) {
+  .tagline {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,83 @@
+@use "../var";
+
+.button {
+  $button-error: hsl(7deg 82% 62%);
+  $button-subscribe: var.$clr-bw-300;
+  $button-subscribing: hsl(261deg 100% 62%);
+  $button-success: hsl(120deg 82% 62%);
+
+  cursor: pointer;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 0.8em 1.3em;
+  font-family: var.$ff-geist-mono;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--button-clr, #{var.$clr-bw-900});
+  background-color: var(--button-bg, #{$button-subscribe});
+  border: 2px solid var(--button-bg, #{$button-subscribe});
+  border-radius: 2em;
+  transition-duration: 440ms;
+
+  [data-show]:not([data-active]) {
+    display: none;
+  }
+
+  &[data-state="subscribing"] {
+    --button-bg: #{$button-subscribing};
+  }
+
+  &[data-state="success"] {
+    --button-bg: #{$button-success};
+
+    animation: success 0.5s ease-in-out both;
+  }
+
+  &[data-state="error"] {
+    --button-bg: #{$button-error};
+
+    animation: error 0.2s forwards;
+  }
+
+  &:hover {
+    color: var(--button-bg);
+    opacity: 0.9;
+    background-color: var(--button-clr);
+  }
+}
+
+@keyframes error {
+  0% {
+    transform: none;
+  }
+
+  25% {
+    transform: translateX(-0.2rem);
+  }
+
+  50% {
+    transform: translateX(0.2rem);
+  }
+
+  75% {
+    transform: translateX(-0.2rem);
+  }
+
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes success {
+  0% {
+    transform: none;
+  }
+
+  25% {
+    transform: translateY(-0.4rem);
+  }
+
+  100% {
+    transform: none;
+  }
+}

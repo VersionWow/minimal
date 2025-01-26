@@ -1,0 +1,12 @@
+@use "var";
+@use "elements";
+@use "marquee";
+@use "media";
+@use "./utils/padding";
+@use "./utils/container";
+@use "./buttons/button-primary";
+@use "./buttons/button-secondary";
+@use "./sections/section-one";
+@use "./sections/section-two";
+
+@import "https://unpkg.com/lenis@1.1.9/dist/lenis.css";

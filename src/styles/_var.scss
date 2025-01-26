@@ -1,0 +1,32 @@
+@font-face {
+  font-family: NeutralFace;
+  src: url("../assets/fonts/NeutralFace.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: GeistMono-Regular;
+  src: url("../assets/fonts/GeistMono-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "pix PixelFJVerdana12pt";
+  src: url("../assets/fonts/6c95fa96859384b5e470c92bf331a525.woff")
+    format("woff");
+}
+
+$clr-bw-100: hsl(0deg 0% 100%);
+$clr-bw-200: hsl(0deg 0% 96%);
+$clr-bw-300: hsl(240deg 6% 86%);
+$clr-bw-800: hsl(0deg 0% 5%);
+$clr-bw-900: hsl(0deg 0% 0%);
+$clr-lavender: hsl(345deg 100% 73%);
+$clr-blue-200: hsl(174deg 97% 43%);
+$clr-yellow-100: hsl(35deg 97% 73%);
+$clr-yellowgreen-300: hsl(88deg 82% 62%);
+
+//  hsl(267deg 95% 76%)
+
+/* stylelint-disable value-keyword-case */
+$ff: NeutralFace;
+$ff-heading: "pix PixelFJVerdana12pt";
+$ff-geist-mono: GeistMono-Regular;
